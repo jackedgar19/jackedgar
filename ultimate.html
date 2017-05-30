@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<title>Jack-Ultimate</title>
+<head>
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500|Pacifico|Roboto+Condensed:700');
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    #ham {
+        margin-top: 35px;
+        margin-left: 45px;
+        margin-right: 1000px;
+        width: 10px;
+        display: inline;
+    }
+    
+    .logo {
+        z-index: 2;
+        vertical-align: middle;
+        margin-left: 655px;
+        width: 57px;
+        height: auto;
+        display: inline;
+    }
+
+    #picturetitle{
+        margin-top: 100px;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Pacifico', sans-serif;
+    }
+
+body {
+    background-image: url("images/place.png");
+    background-size: 100% 400px;
+    background-repeat: no-repeat;
+}
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 5;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+.overlay .closebtn {
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 2%;
+    font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
+    
+    .overlay a {
+        font-size: 20px
+    }
+    
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="index.html">Home</a>
+            <a href="travel.html">Travel</a>
+            <a href="ultimate.html">Ultimate</a>
+            <a href="esports.html">Esports</a>
+        </div>
+    </div>
+    <script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+    </script>
+    <div id="ham"> <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        <a href="index.html">
+            <img class="logo" style="cursor:pointer;" src="images/jlogo.png">
+        </a>
+    </div>
+    <div id="picturetitle">
+        <h1>Ultimate</h1>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)file:///C:/Users/SAAS%20Student/Documents/Design%20and%20Tech/My%20Code/personalwebsite/travel.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Jack-Travel</title>
+
+
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:500|Pacifico|Roboto+Condensed:700');
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .myItaly {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    #ham {
+        margin-top: 35px;
+        margin-left: 45px;
+        margin-right: 1000px;
+        width: 10px;
+        display: inline;
+    }
+    
+    .logo {
+        z-index: 2;
+        vertical-align: middle;
+        margin-left: 655px;
+        width: 57px;
+        height: auto;
+        display: inline;
+    }
+    
+    #picturetitle {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Pacifico', sans-serif;
+    }
+    
+    .myTitle {
+        margin-top: 200px;
+        min-height: 100px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 40px;
+    }
+    
+    body {
+        background-image: url("images/flags.JPG");
+        background-size: 100% 400px;
+        background-repeat: no-repeat;
+    }
+    
+    .overlay {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 5;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-y: hidden;
+        transition: 0.5s;
+    }
+    
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+        position: absolute;
+        margin-top: 1%;
+        margin-left: 2%;
+        font-size: 60px;
+    }
+    
+    @media screen and (max-height: 450px) {
+        .overlay {
+            overflow-y: auto;
+        }
+        .overlay a {
+            font-size: 20px
+        }
+        .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+    }
+    
+    .description {
+        max-width: 600px;
+        margin: 0 auto;
+        color: rgba(229, 229, 229, 0.7);
+    }
+    
+    div,
+    img,
+    footer {
+        position: relative;
+        box-sizing: border-box;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 20px;
+        /* font-family: "Roboto Condensed", Helvetica, sans-serif; */
+        /* font-weight: 300; */
+    }
+    
+    h1 {
+        font-size: 36pt;
+    }
+    
+    h2 {
+        font-size: 24pt;
+    }
+    
+    h3 {
+        font-size: 18pt;
+    }
+    
+    h4 {
+        font-size: 16pt;
+    }
+    
+    h5 {
+        font-size: 14pt;
+    }
+    
+    h6 {
+        font-size: 12pt;
+    }
+    
+    p {
+        font-size: 12pt;
+        margin-bottom: 12pt;
+    }
+    
+    a {
+        -webkit-transition: color 0.25s ease-in-out;
+        transition: color 0.25s ease-in-out;
+    }
+    
+    a:visited {
+        color: #dff3fd;
+    }
+    
+    li.active a,
+    a:hover,
+    a:active {
+        color: #e5e5e5;
+    }
+    
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    
+    .centered-y {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    
+    .distribution-map {
+        position: relative;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    
+    .distribution-map > img {
+        width: 25%;
+        float: right;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .distribution-map .map-point {
+        cursor: pointer;
+        outline: none;
+        z-index: 0;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=80);
+        opacity: 0.8;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -moz-transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+        -o-transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+        -webkit-transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out, z-index 0.25s ease-in-out;
+        -webkit-transition-delay: 0.25s, 0.25s, 0.25s, 0.25s;
+        -webkit-transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+        transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
+        background: rgba(26, 26, 26, 0.85);
+        border: 5px solid #FFFFFF;
+    }
+    
+    .distribution-map .map-point .content {
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        -webkit-transition: opacity 0.25s ease-in-out;
+        transition: opacity 0.25s ease-in-out;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        overflow: overlay;
+    }
+    
+    .distribution-map .map-point:active,
+    .distribution-map .map-point:focus {
+        margin: 0;
+        padding: 0;
+        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
+        opacity: 1;
+        width: 300px;
+        height: 220px;
+        color: #e5e5e5;
+        z-index: 1;
+        -webkit-transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out;
+        transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out;
+    }
+    
+    .distribution-map .map-point:active .content,
+    .distribution-map .map-point:focus .content {
+        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
+        opacity: 1;
+        -moz-transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+        -o-transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+        -webkit-transition: opacity 0.25s ease-in-out, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+        -webkit-transition-delay: 0.25s, 0s, 0s;
+        -webkit-transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+        transition: opacity 0.25s ease-in-out 0.25s, height 0.25s ease-in-out, overflow 0.25s ease-in-out;
+        overflow: hidden;
+    }
+    
+    .distribution-map .map-point:active .content a:hover,
+    .distribution-map .map-point:active .content a:active,
+    .distribution-map .map-point:focus .content a:hover,
+    .distribution-map .map-point:focus .content a:active {
+        color: #afe1fa;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="overlay-content">
+            <a href="file:///C:/Users/SAAS%20Student/Documents/Design%20and%20Tech/My%20Code/personalwebsite/index.html">Home</a>
+            <a href="file:///C:/Users/SAAS%20Student/Documents/Design%20and%20Tech/My%20Code/personalwebsite/travel.html">Travel</a>
+            <a href="file:///C:/Users/SAAS%20Student/Documents/Design%20and%20Tech/My%20Code/personalwebsite/ultimate.html">Ultimate</a>
+            <a href="file:///C:/Users/SAAS%20Student/Documents/Design%20and%20Tech/My%20Code/personalwebsite/esports.html">Esports</a>
+        </div>
+    </div>
+    <script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+    </script>
+    <div id="ham"> <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+        <a href="file:///C:/Users/SAAS%20Student/Documents/Design%20and%20Tech/My%20Code/personalwebsite/index.html">
+            <img class="logo" style="cursor:pointer;" src="./Jack-Travel_files/jlogo.png">
+        </a>
+    </div>
+    <div id="picturetitle">
+        <h1>Travel</h1>
+    </div>
+    <div id="traveltitle">
+        <div class="offset-md-3 col-md-6 myTitle">Italy</div>
+    </div>
+    <div class="col-md-12 myItaly">
+        <img src="./Jack-Travel_files/italycomp1.jpg" style="position:relative; top: 0; left: 0;" width="50%">
+        <img src="./Jack-Travel_files/italycomp2.jpg" style="position:relative; top: 100%; left: 0;" width="50%">
+        <div class="distribution-map" style="width:40%; height:600px; top: 0px; float:right;">
+            <!-- This was broken for a while because imgur :( -->
+            <!-- I don't trust this host. Image here if it goes down: http://i.imgur.com/M7aUkuS.png -->
+            <img id="italypic" src="./Jack-Travel_files/italy.png" style="display: block;">
+            <!--In the original application, these points are injected with Javascript, but ideally, they'd be injected with a haml loop. Because I'm hardcoding content, I'm presenting this as prerendered HTML-->
+            <button class="map-point" style="top:100%;left:82.5%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h2>Rome</h2>
+                        <p>lorem ipsum</p>
+                    </div>
+                </div>
+            </button>
+            <button class="map-point" style="top:175px;left:83%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h2>Pisa</h2>
+                        <p>lorem ipsum</p>
+                    </div>
+                </div>
+            </button>
+            <button class="map-point" style="top:300px;left:93%">
+                <div class="content">
+                    <div class="centered-y">
+                        <h2>Place</h2>
+                        <p>lorem ipsum</p>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+
+
+</body></html>
